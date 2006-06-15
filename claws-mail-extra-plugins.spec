@@ -1,7 +1,6 @@
-
-#TODO		-split plugins in to packages
-#		-remove *others package
-
+# TODO:
+# - pl description for subpackages
+#
 Summary:	Plugins for sylpheed-claws (Metapackage)
 Summary(pl):	Wtyczki dla sylpheed-claws (metapakiet)
 Name:		sylpheed-claws-extra-plugins
@@ -15,14 +14,26 @@ URL:		http://claws.sylpheed.org/plugins.php
 BuildRequires:	curl-devel
 BuildRequires:	libgtkhtml-devel
 BuildRequires:	perl-devel
-BuildRequires:	sylpheed-claws-devel >= 2.1.0
+BuildRequires:	sylpheed-claws-devel >= 2.3.0
 BuildRequires:	synce-librapi2-devel
 BuildRequires:	synce-libsynce-devel
-Requires:	sylpheed-claws >= 2.1.0
+Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws-plugin-acpi_notifier = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-att_remover = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-cachesaver = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-etpan-privacy = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-fetchinfo = %{version}-%{release}
 Requires:	sylpheed-claws-plugin-gtkhtml2_viewer = %{version}-%{release}
 Requires:	sylpheed-claws-plugin-maildir = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-mailmbox = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-newmail = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-notification = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-perl = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-rssyl = %{version}-%{release}
 Requires:	sylpheed-claws-plugin-smime = %{version}-%{release}
-Requires:	sylpheed-claws-plugin-others = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-synce = %{version}-%{release}
+Requires:	sylpheed-claws-plugin-vcalendar = %{version}-%{release}
+Obsoletes:	sylpheed-claws-plugin-others
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugins_dir	%{_libdir}/sylpheed-claws/plugins
@@ -33,10 +44,72 @@ Plugins for sylpheed-claws (metapackage).
 %description -l pl
 Wtyczki dla sylpheed-claws (metapakiet).
 
+%package -n sylpheed-claws-plugin-acpi_notifier
+Summary:	acpi_notifier plugin for sylpheed-claws
+Summary(pl):	Wtyczka acpi_notifier dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-acpi_notifier
+This plugin enables mail notification via LEDs on some laptops.
+
+%description -n sylpheed-claws-plugin-acpi_notifier -l pl
+Ta wtyczka umo¿liwia w niektórych laptopach powiadamianie o nowej
+poczcie poprzez diody LED.
+
+%package -n sylpheed-claws-plugin-att_remover
+Summary:	att_remover plugin for sylpheed-claws
+Summary(pl):	Wtyczka att_remover dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-att_remover
+This plugin lets you remove attachments from emails.
+
+%description -n sylpheed-claws-plugin-att_remover -l pl
+Ta wtyczka pozwala usuwaæ za³±czniki z poczty.
+
+%package -n sylpheed-claws-plugin-cachesaver
+Summary:	cachesaver plugin for sylpheed-claws
+Summary(pl):	Wtyczka cachesaver dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-cachesaver
+This plugin saves the caches every 60 seconds (or user-defined
+period). It helps avoiding the loss of metadata on crashes.
+
+%description -n sylpheed-claws-plugin-cachesaver -l pl
+Ta wtyczka zapisuje cache co 60 sekund (lub w zdefiniowanym przez
+u¿ytkownika okresie). Pomaga unikn±æ utraty metadanych podczas awarii
+programu.
+
+%package -n sylpheed-claws-plugin-etpan-privacy
+Summary:	etpan-privacy plugin for sylpheed-claws
+Summary(pl):	Wtyczka etpan-plugin dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-etpan-privacy
+This plugin handles signature verification and decryption of encrypted
+messages in S/MIME, OpenPGP, and ascii-armored PGP formats.
+
+%package -n sylpheed-claws-plugin-fetchinfo
+Summary:	fetchinfo plugin for sylpheed-claws
+Summary(pl):	Wtyczka fetchinfo dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-fetchinfo
+This plugin inserts headers containing some download information:
+UIDL, Sylpheed-Claws, account name, POP server, user ID and retrieval
+time.
+
 %package -n sylpheed-claws-plugin-gtkhtml2_viewer
 Summary:	gtkhtml2_viewer plugin for sylpheed-claws
 Summary(pl):	Wtyczka gtkhtml2_viewer dla sylpheed-claws
 Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
 
 %description -n sylpheed-claws-plugin-gtkhtml2_viewer
 Renders HTML mail using the gtkhtml2 rendering widget.
@@ -45,9 +118,10 @@ Renders HTML mail using the gtkhtml2 rendering widget.
 Wy¶wietla maile HTML u¿ywaj±c widgeta gtkhtml2.
 
 %package -n sylpheed-claws-plugin-maildir
-Summary:	Maildir++ Plugin for Sylpheed-Claws
+Summary:	Maildir++ plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka Maildir++ dla Sylpheed-Claws
 Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
 
 %description -n sylpheed-claws-plugin-maildir
 The Maildir++ plugin for Sylpheed-Claws provides direct access to
@@ -61,10 +135,62 @@ dostêp do skrzynek formatu Maildir++ u¿ywanych przez serwery IMAP, jak
 np. Courier-IMAP, BincIMAP czy Dovecot bez narzutu zwi±zanego z
 obs³ug± protoko³u IMAP przy po³±czeniu z "localhostem".
 
+%package -n sylpheed-claws-plugin-mailmbox
+Summary:	mailMBOX plugin for sylpheed-claws
+Summary(pl):	Wtyczka mailMBOX dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-mailmbox
+This plugin handles mailboxes in mbox format.
+
+%package -n sylpheed-claws-plugin-newmail
+Summary:	newmail plugin for sylpheed-claws
+Summary(pl):	Wtyczka newmail dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-newmail
+This plugin writes a msg header summary to a log file, (Default:
+~/Mail/NewLog), on arrival of new mail after sorting.
+
+%package -n sylpheed-claws-plugin-notification
+Summary:	notification plugin for sylpheed-claws
+Summary(pl):	Wtyczka notification dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-notification
+This plugin provides various ways to notify the user of new and unread
+email.
+
+%package -n sylpheed-claws-plugin-perl
+Summary:	perl plugin for sylpheed-claws
+Summary(pl):	Wtyczka perl dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-perl
+This plugin is intended to extend the filtering possibilities of
+Sylpheed-Claws. It provides a Perl interface to Sylpheed-Claws
+filtering mechanism, allowing the use of full Perl power in email
+filters.
+
+%package -n sylpheed-claws-plugin-rssyl
+Summary:	RSSyl plugin for sylpheed-claws
+Summary(pl):	Wtyczka RSSyl dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-rssyl
+This plugin allows you to read your favorite newsfeeds in Claws. RSS
+1.0, 2.0 and Atom feeds are currently supported.
+
 %package -n sylpheed-claws-plugin-smime
 Summary:	S/MIME plugin for sylpheed-claws
 Summary(pl):	Wtyczka S/MIME dla sylpheed-claws
 Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
 
 %description -n sylpheed-claws-plugin-smime
 This plugin handles S/MIME signed and/or encrypted mails. You can
@@ -75,16 +201,25 @@ Ta wtyczka obs³uguje podpisan± i/lub zaszyfrowan± pocztê S/MIME.
 Pozwala rozszyfrowywaæ, weryfikowaæ lub podpisywaæ i szyfrowaæ w³asn±
 pocztê.
 
-%package -n sylpheed-claws-plugin-others
-Summary:	Few plugins for sylpheed-claws
-Summary(pl):	Kilka dodatkowych wtyczek dla sylpheed-claws
+%package -n sylpheed-claws-plugin-synce
+Summary:	SynCE plugin for sylpheed-claws
+Summary(pl):	Wtyczka SynCE dla sylpheed-claws
 Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
 
-%description -n sylpheed-claws-plugin-others
-Few plugins for sylpheed-claws.
+%description -n sylpheed-claws-plugin-synce
+This plugin assists in keeping the addressbook of a Windows CE device
+in sync with Claws addressbook, with respect to email addresses.
 
-%description -n sylpheed-claws-plugin-others -l pl
-Kilka dodatkowych wtyczek dla sylpheed-claws.
+%package -n sylpheed-claws-plugin-vcalendar
+Summary:	vCalendar plugin for sylpheed-claws
+Summary(pl):	Wtyczka vCalendar dla sylpheed-claws
+Group:		X11/Applications/Networking
+Requires:	sylpheed-claws >= 2.3.0
+
+%description -n sylpheed-claws-plugin-vcalendar
+This plugin enables vCalendar message handling like that produced by
+Evolution or Outlook and handles webCal subscriptions.
 
 %prep
 %setup -q
@@ -105,12 +240,13 @@ for i in `find * -maxdepth 0 -type d -print`; do
 		DESTDIR=$RPM_BUILD_ROOT
 done
 
-%find_lang gtkhtml2_viewer
+rm -f $RPM_BUILD_ROOT%{_includedir}/*.h
+rm -f $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la,deps}
 
 %find_lang acpi_notifier
+%find_lang gtkhtml2_viewer
 %find_lang rssyl
 %find_lang vcalendar
-cat acpi_notifier.lang rssyl.lang vcalendar.lang > others.lang
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -118,33 +254,78 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 
+%files -n sylpheed-claws-plugin-acpi_notifier -f acpi_notifier.lang
+%defattr(644,root,root,755)
+%doc acpi_notifier-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/acpi_notifier.so
+
+%files -n sylpheed-claws-plugin-att_remover
+%defattr(644,root,root,755)
+%doc att_remover-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/att_remover.so
+
+%files -n sylpheed-claws-plugin-cachesaver
+%defattr(644,root,root,755)
+%doc cachesaver-*/{AUTHORS,ChangeLog}
+%attr(755,root,root) %{_plugins_dir}/cachesaver.so
+
+%files -n sylpheed-claws-plugin-etpan-privacy
+%defattr(644,root,root,755)
+%doc etpan-privacy-*/{AUTHORS,ChangeLog,README}
+%attr(755,root,root) %{_plugins_dir}/etpan-privacy.so
+
+%files -n sylpheed-claws-plugin-fetchinfo
+%defattr(644,root,root,755)
+%doc fetchinfo-plugin-*/{ChangeLog,README}
+%attr(755,root,root) %{_plugins_dir}/fetchinfo_plugin.so
+%attr(755,root,root) %{_plugins_dir}/fetchinfo_plugin_gtk.so
+
 %files -n sylpheed-claws-plugin-gtkhtml2_viewer -f gtkhtml2_viewer.lang
 %defattr(644,root,root,755)
-%doc maildir-*/ChangeLog maildir-*/README
+%doc gtkhtml2_viewer-*/{AUTHORS,ChangeLog}
 %attr(755,root,root) %{_plugins_dir}/gtkhtml2_viewer.so
 
 %files -n sylpheed-claws-plugin-maildir
 %defattr(644,root,root,755)
-%doc maildir-*/ChangeLog maildir-*/README
+%doc maildir-*/{AUTHORS,ChangeLog,README}
 %attr(755,root,root) %{_plugins_dir}/maildir.so
+
+%files -n sylpheed-claws-plugin-mailmbox
+%defattr(644,root,root,755)
+%doc mailmbox-*/{AUTHORS,ChangeLog,README}
+%attr(755,root,root) %{_plugins_dir}/mailmbox.so
+
+%files -n sylpheed-claws-plugin-newmail
+%defattr(644,root,root,755)
+%doc newmail-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/newmail.so
+
+%files -n sylpheed-claws-plugin-notification
+%defattr(644,root,root,755)
+%doc notification_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/notification_plugin.so
+
+%files -n sylpheed-claws-plugin-perl
+%defattr(644,root,root,755)
+%doc perl_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/perl_plugin.so
+
+%files -n sylpheed-claws-plugin-rssyl -f rssyl.lang
+%defattr(644,root,root,755)
+%doc rssyl-*/{AUTHORS,ChangeLog,TODO}
+%attr(755,root,root) %{_plugins_dir}/rssyl.so
 
 %files -n sylpheed-claws-plugin-smime
 %defattr(644,root,root,755)
-%doc smime-*/ChangeLog smime-*/README
+%doc smime-*/{ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/smime.so
 
-%files -n sylpheed-claws-plugin-others -f others.lang
+%files -n sylpheed-claws-plugin-synce
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_plugins_dir}/acpi_notifier.so
-%attr(755,root,root) %{_plugins_dir}/att_remover.so
-%attr(755,root,root) %{_plugins_dir}/cachesaver.so
-%attr(755,root,root) %{_plugins_dir}/etpan-privacy.so
-%attr(755,root,root) %{_plugins_dir}/fetchinfo_plugin.so
-%attr(755,root,root) %{_plugins_dir}/fetchinfo_plugin_gtk.so
-%attr(755,root,root) %{_plugins_dir}/mailmbox.so
-%attr(755,root,root) %{_plugins_dir}/newmail.so
-%attr(755,root,root) %{_plugins_dir}/notification_plugin.so
-%attr(755,root,root) %{_plugins_dir}/perl_plugin.so
-%attr(755,root,root) %{_plugins_dir}/rssyl.so
+%doc synce_plugin-*/{AUTHORS,ChangeLog,README}
 %attr(755,root,root) %{_plugins_dir}/synce_plugin.so
+
+%files -n sylpheed-claws-plugin-vcalendar -f vcalendar.lang
+%defattr(644,root,root,755)
+%doc vcalendar-*/{AUTHORS,ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/vcalendar.so
