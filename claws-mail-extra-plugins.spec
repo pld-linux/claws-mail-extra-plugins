@@ -1,6 +1,3 @@
-# TODO:
-# - pl description for subpackages
-#
 Summary:	Plugins for Sylpheed-Claws (metapackage)
 Summary(pl):	Wtyczki dla Sylpheed-Claws (metapakiet)
 Name:		sylpheed-claws-extra-plugins
@@ -94,6 +91,10 @@ Requires:	sylpheed-claws >= 2.3.0
 This plugin handles signature verification and decryption of encrypted
 messages in S/MIME, OpenPGP, and ascii-armored PGP formats.
 
+%description -n sylpheed-claws-plugin-etpan-privacy -l pl
+Ta wtyczka obs³uguje sprawdzanie podpisów i odszyfrowywanie wiadomo¶ci
+w formatach S/MIME, OpenPGP i opakowanym w ASCII (ascii-armored) PGP.
+
 %package -n sylpheed-claws-plugin-fetchinfo
 Summary:	fetchinfo plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka fetchinfo dla Sylpheed-Claws
@@ -105,6 +106,11 @@ This plugin inserts headers containing some download information:
 UIDL, Sylpheed-Claws, account name, POP server, user ID and retrieval
 time.
 
+%description -n sylpheed-claws-plugin-fetchinfo -l pl
+Ta wtyczka wstawia nag³ówki zawieraj±ce informacje o ¶ci±ganiu: UIDL,
+Sylpheed-Claws, nazwê konta, serwer POP, identyfikator u¿ytkownika i
+czas pobrania.
+
 %package -n sylpheed-claws-plugin-gtkhtml2_viewer
 Summary:	gtkhtml2_viewer plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka gtkhtml2_viewer dla Sylpheed-Claws
@@ -115,7 +121,7 @@ Requires:	sylpheed-claws >= 2.3.0
 Renders HTML mail using the gtkhtml2 rendering widget.
 
 %description -n sylpheed-claws-plugin-gtkhtml2_viewer -l pl
-Wy¶wietla maile HTML u¿ywaj±c widgeta gtkhtml2.
+Wy¶wietla pocztê w HTML-u u¿ywaj±c widgeta gtkhtml2.
 
 %package -n sylpheed-claws-plugin-maildir
 Summary:	Maildir++ plugin for Sylpheed-Claws
@@ -144,6 +150,9 @@ Requires:	sylpheed-claws >= 2.3.0
 %description -n sylpheed-claws-plugin-mailmbox
 This plugin handles mailboxes in mbox format.
 
+%description -n sylpheed-claws-plugin-mailmbox -l pl
+Ta wtyczka obs³uguje skrzynki w formacie mbox.
+
 %package -n sylpheed-claws-plugin-newmail
 Summary:	newmail plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka newmail dla Sylpheed-Claws
@@ -154,6 +163,11 @@ Requires:	sylpheed-claws >= 2.3.0
 This plugin writes a msg header summary to a log file, (Default:
 ~/Mail/NewLog), on arrival of new mail after sorting.
 
+%description -n sylpheed-claws-plugin-newmail -l pl
+Ta wtyczka zapisuje podsumowanie nag³ówków wiadomo¶ci do pliku loga
+(domy¶lnie ~/Mail/NewLog) w czasie dostarczania nowej poczty, po
+sortowaniu.
+
 %package -n sylpheed-claws-plugin-notification
 Summary:	notification plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka notification dla Sylpheed-Claws
@@ -163,6 +177,10 @@ Requires:	sylpheed-claws >= 2.3.0
 %description -n sylpheed-claws-plugin-notification
 This plugin provides various ways to notify the user of new and unread
 email.
+
+%description -n sylpheed-claws-plugin-notification -l pl
+Ta wtyczka udostêpnia ró¿ne sposoby informowania u¿ytkownika o nowej i
+nieprzeczytanej poczcie.
 
 %package -n sylpheed-claws-plugin-perl
 Summary:	perl plugin for Sylpheed-Claws
@@ -176,6 +194,12 @@ Sylpheed-Claws. It provides a Perl interface to Sylpheed-Claws
 filtering mechanism, allowing the use of full Perl power in email
 filters.
 
+%description -n sylpheed-claws-plugin-perl -l pl
+Ta wtyczka ma na celu rozszerzenie mo¿liwo¶ci filtrowania
+Sylpheeda-Claws. Udostêpnia perlowy interfejs do mechanizmów
+filtrowania Sylpheeda-Claws, pozwalaj±c na u¿ycie pe³nej mocy Perla w
+filtrach wiadomo¶ci.
+
 %package -n sylpheed-claws-plugin-rssyl
 Summary:	RSSyl plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka RSSyl dla Sylpheed-Claws
@@ -185,6 +209,10 @@ Requires:	sylpheed-claws >= 2.3.0
 %description -n sylpheed-claws-plugin-rssyl
 This plugin allows you to read your favorite newsfeeds in
 Sylpheed-Claws. RSS 1.0, 2.0 and Atom feeds are currently supported.
+
+%description -n sylpheed-claws-plugin-rssyl -l pl
+Ta wtyczka pozwala na czytanie ulubionych nowinek w Sylpheedzie-Claws.
+Aktualnie obs³ugiwane s± formaty RSS 1.0, 2.0 i Atom.
 
 %package -n sylpheed-claws-plugin-smime
 Summary:	S/MIME plugin for Sylpheed-Claws
@@ -212,6 +240,11 @@ This plugin assists in keeping the addressbook of a Windows CE device
 in sync with Sylpheed-Claws addressbook, with respect to email
 addresses.
 
+%description -n sylpheed-claws-plugin-synce -l pl
+Ta wtyczka pomaga w utrzymywaniu ksi±¿ki adresowej urz±dzeñ z Windows
+CE w synchronizacji z ksi±¿k± adresow± Sylpheeda-Claws, uwzglêdniaj±c
+adresy pocztowe.
+
 %package -n sylpheed-claws-plugin-vcalendar
 Summary:	vCalendar plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka vCalendar dla Sylpheed-Claws
@@ -221,6 +254,11 @@ Requires:	sylpheed-claws >= 2.3.0
 %description -n sylpheed-claws-plugin-vcalendar
 This plugin enables vCalendar message handling like that produced by
 Evolution or Outlook and handles webCal subscriptions.
+
+%description -n sylpheed-claws-plugin-vcalendar -l pl
+Ta wtyczka pozwala na obs³ugê wiadomo¶ci vCalendar, takich jak te
+tworzone przez Evolution czy Outlooka, a tak¿e obs³uguje subskrypcje
+webCal.
 
 %prep
 %setup -q
