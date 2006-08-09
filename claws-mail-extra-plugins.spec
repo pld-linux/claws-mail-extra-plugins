@@ -1,20 +1,20 @@
 Summary:	Plugins for Sylpheed-Claws (metapackage)
 Summary(pl):	Wtyczki dla Sylpheed-Claws (metapakiet)
 Name:		sylpheed-claws-extra-plugins
-Version:	2.3.0
+Version:	2.4.0
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	06b53d69913ea1c96fb154fa2686606a
+# Source0-md5:	f0a7c85c033dba930706f18b73274213
 URL:		http://www.sylpheed-claws.net/plugins.php
 BuildRequires:	curl-devel
 BuildRequires:	libgtkhtml-devel
 BuildRequires:	perl-devel
-BuildRequires:	sylpheed-claws-devel >= 2.3.0
+BuildRequires:	sylpheed-claws-devel >= 2.4.0
 BuildRequires:	synce-librapi2-devel
 BuildRequires:	synce-libsynce-devel
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.4.0
 Requires:	sylpheed-claws-plugin-acpi_notifier = %{version}-%{release}
 Requires:	sylpheed-claws-plugin-att_remover = %{version}-%{release}
 Requires:	sylpheed-claws-plugin-cachesaver = %{version}-%{release}
