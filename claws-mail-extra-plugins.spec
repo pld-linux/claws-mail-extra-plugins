@@ -1,12 +1,12 @@
 Summary:	Plugins for Sylpheed-Claws (metapackage)
 Summary(pl):	Wtyczki dla Sylpheed-Claws (metapakiet)
 Name:		sylpheed-claws-extra-plugins
-Version:	2.4.0
+Version:	2.5.2
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	f0a7c85c033dba930706f18b73274213
+# Source0-md5:	db771d49bf9bde1cce075b93f8028a19
 URL:		http://www.sylpheed-claws.net/plugins.php
 BuildRequires:	curl-devel
 BuildRequires:	libgtkhtml-devel
