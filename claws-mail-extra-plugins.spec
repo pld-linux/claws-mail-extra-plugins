@@ -1,20 +1,20 @@
 Summary:	Plugins for Sylpheed-Claws (metapackage)
 Summary(pl):	Wtyczki dla Sylpheed-Claws (metapakiet)
 Name:		sylpheed-claws-extra-plugins
-Version:	2.5.2
+Version:	2.6.0
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	db771d49bf9bde1cce075b93f8028a19
+# Source0-md5:	621e011a8a801485a18202696343b0ce
 URL:		http://www.sylpheed-claws.net/plugins.php
 BuildRequires:	curl-devel
 BuildRequires:	libgtkhtml-devel
 BuildRequires:	perl-devel
-BuildRequires:	sylpheed-claws-devel >= 2.4.0
+BuildRequires:	sylpheed-claws-devel >= 2.5.0
 BuildRequires:	synce-librapi2-devel
 BuildRequires:	synce-libsynce-devel
-Requires:	sylpheed-claws >= 2.4.0
+Requires:	sylpheed-claws >= 2.5.0
 Requires:	sylpheed-claws-plugin-acpi_notifier = %{version}-%{release}
 Requires:	sylpheed-claws-plugin-att_remover = %{version}-%{release}
 Requires:	sylpheed-claws-plugin-cachesaver = %{version}-%{release}
@@ -45,7 +45,7 @@ Wtyczki dla Sylpheed-Claws (metapakiet).
 Summary:	acpi_notifier plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka acpi_notifier dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-acpi_notifier
 This plugin enables mail notification via LEDs on some laptops.
@@ -58,7 +58,7 @@ poczcie poprzez diody LED.
 Summary:	att_remover plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka att_remover dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-att_remover
 This plugin lets you remove attachments from emails.
@@ -70,7 +70,7 @@ Ta wtyczka pozwala usuwaæ za³±czniki z poczty.
 Summary:	cachesaver plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka cachesaver dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-cachesaver
 This plugin saves the caches every 60 seconds (or user-defined
@@ -85,7 +85,7 @@ programu.
 Summary:	etpan-privacy plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka etpan-privacy dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-etpan-privacy
 This plugin handles signature verification and decryption of encrypted
@@ -99,7 +99,7 @@ w formatach S/MIME, OpenPGP i opakowanym w ASCII (ascii-armored) PGP.
 Summary:	fetchinfo plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka fetchinfo dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-fetchinfo
 This plugin inserts headers containing some download information:
@@ -115,7 +115,7 @@ czas pobrania.
 Summary:	gtkhtml2_viewer plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka gtkhtml2_viewer dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-gtkhtml2_viewer
 Renders HTML mail using the gtkhtml2 rendering widget.
@@ -127,7 +127,7 @@ Wy¶wietla pocztê w HTML-u u¿ywaj±c widgeta gtkhtml2.
 Summary:	Maildir++ plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka Maildir++ dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-maildir
 The Maildir++ plugin for Sylpheed-Claws provides direct access to
@@ -145,7 +145,7 @@ obs³ug± protoko³u IMAP przy po³±czeniu z "localhostem".
 Summary:	mailMBOX plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka mailMBOX dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-mailmbox
 This plugin handles mailboxes in mbox format.
@@ -157,7 +157,7 @@ Ta wtyczka obs³uguje skrzynki w formacie mbox.
 Summary:	newmail plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka newmail dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-newmail
 This plugin writes a msg header summary to a log file, (Default:
@@ -172,7 +172,7 @@ sortowaniu.
 Summary:	notification plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka notification dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-notification
 This plugin provides various ways to notify the user of new and unread
@@ -186,7 +186,7 @@ nieprzeczytanej poczcie.
 Summary:	perl plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka perl dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-perl
 This plugin is intended to extend the filtering possibilities of
@@ -204,7 +204,7 @@ filtrach wiadomo¶ci.
 Summary:	RSSyl plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka RSSyl dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-rssyl
 This plugin allows you to read your favorite newsfeeds in
@@ -218,7 +218,7 @@ Aktualnie obs³ugiwane s± formaty RSS 1.0, 2.0 i Atom.
 Summary:	S/MIME plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka S/MIME dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-smime
 This plugin handles S/MIME signed and/or encrypted mails. You can
@@ -233,7 +233,7 @@ pocztê.
 Summary:	SynCE plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka SynCE dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-synce
 This plugin assists in keeping the addressbook of a Windows CE device
@@ -249,7 +249,7 @@ adresy pocztowe.
 Summary:	vCalendar plugin for Sylpheed-Claws
 Summary(pl):	Wtyczka vCalendar dla Sylpheed-Claws
 Group:		X11/Applications/Networking
-Requires:	sylpheed-claws >= 2.3.0
+Requires:	sylpheed-claws >= 2.5.0
 
 %description -n sylpheed-claws-plugin-vcalendar
 This plugin enables vCalendar message handling like that produced by
@@ -261,7 +261,7 @@ tworzone przez Evolution czy Outlooka, a tak¿e obs³uguje subskrypcje
 webCal.
 
 %prep
-%setup -q
+%setup -q -c
 
 %build
 for i in `find * -maxdepth 0 -type d -print`; do
