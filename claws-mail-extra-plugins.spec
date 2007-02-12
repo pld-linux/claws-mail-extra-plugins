@@ -1,5 +1,5 @@
 Summary:	Plugins for Claws-Mail (metapackage)
-Summary(pl.UTF-8):   Wtyczki dla Claws-Mail (metapakiet)
+Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
 Version:	2.7.1
 Release:	1
@@ -46,7 +46,7 @@ Wtyczki dla Claws-Mail (metapakiet).
 
 %package -n claws-mail-plugin-acpi_notifier
 Summary:	acpi_notifier plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka acpi_notifier dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka acpi_notifier dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-acpi_notifier
@@ -61,7 +61,7 @@ poczcie poprzez diody LED.
 
 %package -n claws-mail-plugin-att_remover
 Summary:	att_remover plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka att_remover dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka att_remover dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-att_remover
@@ -75,7 +75,7 @@ Ta wtyczka pozwala usuwać załączniki z poczty.
 
 %package -n claws-mail-plugin-attachwarner
 Summary:	attachwarner plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka attachwarner dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka attachwarner dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 
@@ -90,7 +90,7 @@ treści o załączniku, ale nie załącza żadnego pliku do wiadomości.
 
 %package -n claws-mail-plugin-cachesaver
 Summary:	cachesaver plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka cachesaver dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka cachesaver dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-cachesaver
@@ -107,7 +107,7 @@ programu.
 
 %package -n claws-mail-plugin-etpan-privacy
 Summary:	etpan-privacy plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka etpan-privacy dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka etpan-privacy dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-etpan-privacy
@@ -123,7 +123,7 @@ w formatach S/MIME, OpenPGP i opakowanym w ASCII (ascii-armored) PGP.
 
 %package -n claws-mail-plugin-fetchinfo
 Summary:	fetchinfo plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka fetchinfo dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka fetchinfo dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-fetchinfo
@@ -141,7 +141,7 @@ pobrania.
 
 %package -n claws-mail-plugin-gtkhtml2_viewer
 Summary:	gtkhtml2_viewer plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka gtkhtml2_viewer dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka gtkhtml2_viewer dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-gtkhtml2_viewer
@@ -155,7 +155,7 @@ Wyświetla pocztę w HTML-u używając widgeta gtkhtml2.
 
 %package -n claws-mail-plugin-maildir
 Summary:	Maildir++ plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka Maildir++ dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka Maildir++ dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-maildir
@@ -175,7 +175,7 @@ protokołu IMAP przy połączeniu z "localhostem".
 
 %package -n claws-mail-plugin-mailmbox
 Summary:	mailMBOX plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka mailMBOX dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka mailMBOX dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-mailmbox
@@ -189,7 +189,7 @@ Ta wtyczka obsługuje skrzynki w formacie mbox.
 
 %package -n claws-mail-plugin-newmail
 Summary:	newmail plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka newmail dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka newmail dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-newmail
@@ -206,7 +206,7 @@ sortowaniu.
 
 %package -n claws-mail-plugin-notification
 Summary:	notification plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka notification dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka notification dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-notification
@@ -222,7 +222,7 @@ nieprzeczytanej poczcie.
 
 %package -n claws-mail-plugin-perl
 Summary:	perl plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka perl dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka perl dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-perl
@@ -241,7 +241,7 @@ filtrach wiadomości.
 
 %package -n claws-mail-plugin-rssyl
 Summary:	RSSyl plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka RSSyl dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka RSSyl dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-rssyl
@@ -257,7 +257,7 @@ Aktualnie obsługiwane są formaty RSS 1.0, 2.0 i Atom.
 
 %package -n claws-mail-plugin-smime
 Summary:	S/MIME plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka S/MIME dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka S/MIME dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-smime
@@ -274,7 +274,7 @@ pocztę.
 
 %package -n claws-mail-plugin-synce
 Summary:	SynCE plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka SynCE dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka SynCE dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-synce
@@ -291,7 +291,7 @@ adresy pocztowe.
 
 %package -n claws-mail-plugin-vcalendar
 Summary:	vCalendar plugin for Claws-Mail
-Summary(pl.UTF-8):   Wtyczka vCalendar dla Claws-Mail
+Summary(pl.UTF-8):	Wtyczka vCalendar dla Claws-Mail
 Group:		X11/Applications/Networking
 Requires:	claws-mail >= 2.7.1
 Provides:	sylpheed-claws-plugin-vcalendar
