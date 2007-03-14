@@ -235,7 +235,8 @@ Requires:	ghostscript
 This plugin enables the viewing of PDF and PostScript attachments.
 
 %description -n claws-mail-plugin-pdf_viewer -l pl.UTF-8
-Ta wtyczka umożliwia wyświetlanie załączników w formacie PDF i PostScript.
+Ta wtyczka umożliwia wyświetlanie załączników w formacie PDF i
+PostScript.
 
 %package -n claws-mail-plugin-perl
 Summary:	perl plugin for Claws-Mail
