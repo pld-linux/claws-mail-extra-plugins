@@ -1,14 +1,14 @@
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
-Version:	2.8.0
-Release:	3
+Version:	2.9.0
+Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	30fa4df35a55fbbc584ce40d7145f92e
+# Source0-md5:	5e86ceebdc36c3218cccd718de8b30af
 URL:		http://www.claws-mail.net/plugins.php
-BuildRequires:	claws-mail-devel >= 2.7.1
+BuildRequires:	claws-mail-devel >= 2.9.0
 BuildRequires:	curl-devel
 BuildRequires:	ghostscript
 BuildRequires:	libgtkhtml-devel
@@ -22,10 +22,8 @@ Requires:	claws-mail-plugin-acpi_notifier = %{version}-%{release}
 Requires:	claws-mail-plugin-att_remover = %{version}-%{release}
 Requires:	claws-mail-plugin-attachwarner = %{version}-%{release}
 Requires:	claws-mail-plugin-cachesaver = %{version}-%{release}
-Requires:	claws-mail-plugin-etpan-privacy = %{version}-%{release}
 Requires:	claws-mail-plugin-fetchinfo = %{version}-%{release}
 Requires:	claws-mail-plugin-gtkhtml2_viewer = %{version}-%{release}
-Requires:	claws-mail-plugin-maildir = %{version}-%{release}
 Requires:	claws-mail-plugin-mailmbox = %{version}-%{release}
 Requires:	claws-mail-plugin-newmail = %{version}-%{release}
 Requires:	claws-mail-plugin-notification = %{version}-%{release}
@@ -109,22 +107,6 @@ Ta wtyczka zapisuje cache co 60 sekund (lub w zdefiniowanym przez
 użytkownika okresie). Pomaga uniknąć utraty metadanych podczas awarii
 programu.
 
-%package -n claws-mail-plugin-etpan-privacy
-Summary:	etpan-privacy plugin for Claws-Mail
-Summary(pl.UTF-8):	Wtyczka etpan-privacy dla Claws-Mail
-Group:		X11/Applications/Networking
-%requires_eq	claws-mail
-Provides:	sylpheed-claws-plugin-etpan-privacy
-Obsoletes:	sylpheed-claws-plugin-etpan-privacy
-
-%description -n claws-mail-plugin-etpan-privacy
-This plugin handles signature verification and decryption of encrypted
-messages in S/MIME, OpenPGP, and ascii-armored PGP formats.
-
-%description -n claws-mail-plugin-etpan-privacy -l pl.UTF-8
-Ta wtyczka obsługuje sprawdzanie podpisów i odszyfrowywanie wiadomości
-w formatach S/MIME, OpenPGP i opakowanym w ASCII (ascii-armored) PGP.
-
 %package -n claws-mail-plugin-fetchinfo
 Summary:	fetchinfo plugin for Claws-Mail
 Summary(pl.UTF-8):	Wtyczka fetchinfo dla Claws-Mail
@@ -156,26 +138,6 @@ Renders HTML mail using the gtkhtml2 rendering widget.
 
 %description -n claws-mail-plugin-gtkhtml2_viewer -l pl.UTF-8
 Wyświetla pocztę w HTML-u używając widgeta gtkhtml2.
-
-%package -n claws-mail-plugin-maildir
-Summary:	Maildir++ plugin for Claws-Mail
-Summary(pl.UTF-8):	Wtyczka Maildir++ dla Claws-Mail
-Group:		X11/Applications/Networking
-%requires_eq	claws-mail
-Provides:	sylpheed-claws-plugin-maildir
-Obsoletes:	sylpheed-claws-plugin-maildir
-
-%description -n claws-mail-plugin-maildir
-The Maildir++ plugin for Claws-Mail provides direct access to
-Maildir++ Mailboxes used by IMAP-Servers like Courier-IMAP, BincIMAP
-or Dovecot without having all the IMAP overhead of a connection to
-'localhost'.
-
-%description -n claws-mail-plugin-maildir -l pl.UTF-8
-Wtyczka obsługi Maildir++ dla Claws-Mail umożliwia bezpośredni dostęp
-do skrzynek formatu Maildir++ używanych przez serwery IMAP, jak np.
-Courier-IMAP, BincIMAP czy Dovecot bez narzutu związanego z obsługą
-protokołu IMAP przy połączeniu z "localhostem".
 
 %package -n claws-mail-plugin-mailmbox
 Summary:	mailMBOX plugin for Claws-Mail
@@ -347,6 +309,7 @@ rm -f $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la,deps}
 %find_lang acpi_notifier
 %find_lang attachwarner
 %find_lang gtkhtml2_viewer
+%find_lang notification_plugin
 %find_lang pdf_viewer
 %find_lang rssyl
 %find_lang vcalendar
@@ -377,11 +340,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc cachesaver-*/{AUTHORS,ChangeLog}
 %attr(755,root,root) %{_plugins_dir}/cachesaver.so
 
-%files -n claws-mail-plugin-etpan-privacy
-%defattr(644,root,root,755)
-%doc etpan-privacy-*/{AUTHORS,ChangeLog,README}
-%attr(755,root,root) %{_plugins_dir}/etpan-privacy.so
-
 %files -n claws-mail-plugin-fetchinfo
 %defattr(644,root,root,755)
 %doc fetchinfo-plugin-*/{ChangeLog,README}
@@ -391,11 +349,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc gtkhtml2_viewer-*/{AUTHORS,ChangeLog}
 %attr(755,root,root) %{_plugins_dir}/gtkhtml2_viewer.so
-
-%files -n claws-mail-plugin-maildir
-%defattr(644,root,root,755)
-%doc maildir-*/{AUTHORS,ChangeLog,README}
-%attr(755,root,root) %{_plugins_dir}/maildir.so
 
 %files -n claws-mail-plugin-mailmbox
 %defattr(644,root,root,755)
@@ -407,7 +360,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc newmail-*/{AUTHORS,ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/newmail.so
 
-%files -n claws-mail-plugin-notification
+%files -n claws-mail-plugin-notification -f notification_plugin.lang
 %defattr(644,root,root,755)
 %doc notification_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/notification_plugin.so
