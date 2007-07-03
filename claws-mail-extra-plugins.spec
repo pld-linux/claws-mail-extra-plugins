@@ -2,7 +2,7 @@ Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
 Version:	2.9.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
