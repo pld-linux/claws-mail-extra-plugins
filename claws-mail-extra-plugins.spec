@@ -1,14 +1,14 @@
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
-Version:	2.10.0
+Version:	3.0.0
 Release:	1
-License:	GPL
+License:	GPL v3
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	1dc867cb2b781a65eace390fd1deb424
+# Source0-md5:	c59f022987fb8136b6d4a8a0611d2d39
 URL:		http://www.claws-mail.net/plugins.php
-BuildRequires:	claws-mail-devel >= 2.9.1
+BuildRequires:	claws-mail-devel >= 3.0.0
 BuildRequires:	curl-devel
 BuildRequires:	ghostscript
 BuildRequires:	libgtkhtml-devel
@@ -31,6 +31,7 @@ Requires:	claws-mail-plugin-pdf_viewer = %{version}-%{release}
 Requires:	claws-mail-plugin-perl = %{version}-%{release}
 Requires:	claws-mail-plugin-rssyl = %{version}-%{release}
 Requires:	claws-mail-plugin-smime = %{version}-%{release}
+Requires:	claws-mail-plugin-spamreport = %{version}-%{release}
 Requires:	claws-mail-plugin-synce = %{version}-%{release}
 Requires:	claws-mail-plugin-vcalendar = %{version}-%{release}
 Provides:	sylpheed-claws-extra-plugins
@@ -83,12 +84,12 @@ Group:		X11/Applications/Networking
 
 %description -n claws-mail-plugin-attachwarner
 This plugin warns when the user composes a message mentioning an
-attachment in the message body, but without attaching any files to
-the message.
+attachment in the message body, but without attaching any files to the
+message.
 
 %description -n claws-mail-plugin-attachwarner -l pl.UTF-8
 Ta wtyczka ostrzega, kiedy użytkownik piszący wiadomość wspomina w
-treści o załączniku, ale nie załącza żadnego pliku do wiadomości. 
+treści o załączniku, ale nie załącza żadnego pliku do wiadomości.
 
 %package -n claws-mail-plugin-cachesaver
 Summary:	cachesaver plugin for Claws-Mail
@@ -252,6 +253,16 @@ Ta wtyczka obsługuje podpisaną i/lub zaszyfrowaną pocztę S/MIME.
 Pozwala rozszyfrowywać, weryfikować lub podpisywać i szyfrować własną
 pocztę.
 
+%package -n claws-mail-plugin-spamreport
+Summary:	SpamReport plugin for Claws-Mail
+Summary(pl.UTF-8):	Wtyczka SpamReport dla Claws-Mail
+Group:		X11/Applications/Networking
+%requires_eq	claws-mail
+
+%description -n claws-mail-plugin-spamreport
+This plugin allows you to upload spams to various spam reporting
+places, like http://www.signal-spam.fr/ .
+
 %package -n claws-mail-plugin-synce
 Summary:	SynCE plugin for Claws-Mail
 Summary(pl.UTF-8):	Wtyczka SynCE dla Claws-Mail
@@ -312,6 +323,7 @@ rm -f $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la,deps}
 %find_lang notification_plugin
 %find_lang pdf_viewer
 %find_lang rssyl
+%find_lang spam_report
 %find_lang vcalendar
 
 %clean
@@ -383,6 +395,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc smime-*/{ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/smime.so
+
+%files -n claws-mail-plugin-spamreport -f spam_report.lang
+%defattr(644,root,root,755)
+%doc spam_report-*/{ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/spamreport.so
 
 %files -n claws-mail-plugin-synce
 %defattr(644,root,root,755)
