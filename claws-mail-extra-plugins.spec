@@ -1,18 +1,19 @@
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
-Version:	3.0.1
-Release:	2
+Version:	3.1.0
+Release:	1
 License:	GPL v3
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	7dd8ee1d759d5017ebb673be71df9357
+# Source0-md5:	2385b7cd48d13de37bb3450688384d96
 URL:		http://www.claws-mail.net/plugins.php
-BuildRequires:	claws-mail-devel >= 3.0.1
+BuildRequires:	claws-mail-devel >= 3.1.0
 BuildRequires:	curl-devel
 BuildRequires:	ghostscript
 BuildRequires:	libgtkhtml-devel
 BuildRequires:	libnotify-devel >= 0.4.3
+BuildRequires:	libytnef-devel
 BuildRequires:	perl-devel
 BuildRequires:	poppler-glib-devel
 BuildRequires:	synce-librapi2-devel
@@ -33,6 +34,7 @@ Requires:	claws-mail-plugin-rssyl = %{version}-%{release}
 Requires:	claws-mail-plugin-smime = %{version}-%{release}
 Requires:	claws-mail-plugin-spamreport = %{version}-%{release}
 Requires:	claws-mail-plugin-synce = %{version}-%{release}
+Requires:	claws-mail-plugin-tnef_parse = %{version}-%{release}
 Requires:	claws-mail-plugin-vcalendar = %{version}-%{release}
 Provides:	sylpheed-claws-extra-plugins
 Obsoletes:	sylpheed-claws-extra-plugins
@@ -280,6 +282,18 @@ Ta wtyczka pomaga w utrzymywaniu książki adresowej urządzeń z Windows
 CE w synchronizacji z książką adresową Sylpheeda-Claws, uwzględniając
 adresy pocztowe.
 
+%package -n claws-mail-plugin-tnef_parse
+Summary:	TNEF Parse plugin for Claws-Mail
+Summary(pl.UTF-8):	Wtyczka TNEF Parse dla Claws-Mail
+Group:		X11/Applications/Networking
+%requires_eq	claws-mail
+
+%description -n claws-mail-plugin-tnef_parse
+This plugin enables reading application/ms-tnef attachments.
+
+%description -n claws-mail-plugin-tnef_parse -l pl.UTF-8
+Ta wtyczka pozwala czytać załączniki typu application/ms-tnef.
+
 %package -n claws-mail-plugin-vcalendar
 Summary:	vCalendar plugin for Claws-Mail
 Summary(pl.UTF-8):	Wtyczka vCalendar dla Claws-Mail
@@ -324,6 +338,7 @@ rm -f $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la,deps}
 %find_lang pdf_viewer
 %find_lang rssyl
 %find_lang spam_report
+%find_lang tnef_parse
 %find_lang vcalendar
 
 %clean
@@ -405,6 +420,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc synce_plugin-*/{AUTHORS,ChangeLog,README}
 %attr(755,root,root) %{_plugins_dir}/synce_plugin.so
+
+%files -n claws-mail-plugin-tnef_parse -f tnef_parse.lang
+%defattr(644,root,root,755)
+%doc tnef_parse-*/{AUTHORS,ChangeLog,README}
+%attr(755,root,root) %{_plugins_dir}/tnef_parse.so
 
 %files -n claws-mail-plugin-vcalendar -f vcalendar.lang
 %defattr(644,root,root,755)
