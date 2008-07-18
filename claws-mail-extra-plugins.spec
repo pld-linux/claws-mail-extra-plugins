@@ -39,6 +39,7 @@ Requires:	claws-mail-plugin-synce = %{version}-%{release}
 Requires:	claws-mail-plugin-tnef_parse = %{version}-%{release}
 Requires:	claws-mail-plugin-vcalendar = %{version}-%{release}
 Provides:	sylpheed-claws-extra-plugins
+Obsoletes:	claws-mail-plugin-pdf_viewer
 Obsoletes:	sylpheed-claws-extra-plugins
 Obsoletes:	sylpheed-claws-plugin-others
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
