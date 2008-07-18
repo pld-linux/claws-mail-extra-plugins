@@ -22,6 +22,7 @@ BuildRequires:	synce-librapi2-devel
 BuildRequires:	synce-libsynce-devel
 %requires_eq	claws-mail
 Requires:	claws-mail-plugin-acpi_notifier = %{version}-%{release}
+Requires:	claws-mail-plugin-archive = %{version}-%{release}
 Requires:	claws-mail-plugin-att_remover = %{version}-%{release}
 Requires:	claws-mail-plugin-attachwarner = %{version}-%{release}
 Requires:	claws-mail-plugin-cachesaver = %{version}-%{release}
