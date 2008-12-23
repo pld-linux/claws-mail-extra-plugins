@@ -1,14 +1,14 @@
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
-Version:	3.5.0
-Release:	3
+Version:	3.7.0
+Release:	1
 License:	GPL v3
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	f3201655c724642e6f73efe8b5b754fb
+# Source0-md5:	b934a63222d8031e6d6c5aace8c4db72
 URL:		http://www.claws-mail.net/plugins.php
-BuildRequires:	claws-mail-devel >= 3.5.0
+BuildRequires:	claws-mail-devel >= 3.7.0
 BuildRequires:	curl-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	libarchive-devel
@@ -33,7 +33,6 @@ Requires:	claws-mail-plugin-newmail = %{version}-%{release}
 Requires:	claws-mail-plugin-notification = %{version}-%{release}
 Requires:	claws-mail-plugin-perl = %{version}-%{release}
 Requires:	claws-mail-plugin-rssyl = %{version}-%{release}
-Requires:	claws-mail-plugin-smime = %{version}-%{release}
 Requires:	claws-mail-plugin-spamreport = %{version}-%{release}
 Requires:	claws-mail-plugin-synce = %{version}-%{release}
 Requires:	claws-mail-plugin-tnef_parse = %{version}-%{release}
@@ -241,24 +240,6 @@ RSS 1.0, 2.0 and Atom feeds are currently supported.
 Ta wtyczka pozwala na czytanie ulubionych nowinek w Sylpheedzie-Claws.
 Aktualnie obsługiwane są formaty RSS 1.0, 2.0 i Atom.
 
-%package -n claws-mail-plugin-smime
-Summary:	S/MIME plugin for Claws-Mail
-Summary(pl.UTF-8):	Wtyczka S/MIME dla Claws-Mail
-Group:		X11/Applications/Mail
-%requires_eq	claws-mail
-Requires:	claws-mail-plugin-pgpcore
-Provides:	sylpheed-claws-plugin-smime
-Obsoletes:	sylpheed-claws-plugin-smime
-
-%description -n claws-mail-plugin-smime
-This plugin handles S/MIME signed and/or encrypted mails. You can
-decrypt mails, verify signatures or sign and encrypt your own mails.
-
-%description -n claws-mail-plugin-smime -l pl.UTF-8
-Ta wtyczka obsługuje podpisaną i/lub zaszyfrowaną pocztę S/MIME.
-Pozwala rozszyfrowywać, weryfikować lub podpisywać i szyfrować własną
-pocztę.
-
 %package -n claws-mail-plugin-spamreport
 Summary:	SpamReport plugin for Claws-Mail
 Summary(pl.UTF-8):	Wtyczka SpamReport dla Claws-Mail
@@ -410,11 +391,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc rssyl-*/{AUTHORS,ChangeLog,TODO}
 %attr(755,root,root) %{_plugins_dir}/rssyl.so
-
-%files -n claws-mail-plugin-smime
-%defattr(644,root,root,755)
-%doc smime-*/{ChangeLog,NEWS,README}
-%attr(755,root,root) %{_plugins_dir}/smime.so
 
 %files -n claws-mail-plugin-spamreport -f spam_report.lang
 %defattr(644,root,root,755)
