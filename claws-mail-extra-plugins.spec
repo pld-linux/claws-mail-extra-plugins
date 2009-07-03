@@ -1,12 +1,12 @@
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
-Version:	3.7.1
-Release:	3
+Version:	3.7.2
+Release:	1
 License:	GPL v3
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	a483d0554365c2409f8921eefcb69a6f
+# Source0-md5:	0bdbbf69b2420e4bbb8d0ae85f9f85d6
 URL:		http://www.claws-mail.net/plugins.php
 BuildRequires:	claws-mail-devel >= 3.7.0
 BuildRequires:	curl-devel
@@ -25,7 +25,9 @@ Requires:	claws-mail-plugin-acpi_notifier = %{version}-%{release}
 Requires:	claws-mail-plugin-archive = %{version}-%{release}
 Requires:	claws-mail-plugin-att_remover = %{version}-%{release}
 Requires:	claws-mail-plugin-attachwarner = %{version}-%{release}
+Requires:	claws-mail-plugin-bsfilter = %{version}-%{release}
 Requires:	claws-mail-plugin-cachesaver = %{version}-%{release}
+Requires:	claws-mail-plugin-fancy = %{version}-%{release}
 Requires:	claws-mail-plugin-fetchinfo = %{version}-%{release}
 Requires:	claws-mail-plugin-gtkhtml2_viewer = %{version}-%{release}
 Requires:	claws-mail-plugin-mailmbox = %{version}-%{release}
@@ -109,6 +111,20 @@ message.
 Ta wtyczka ostrzega, kiedy użytkownik piszący wiadomość wspomina w
 treści o załączniku, ale nie załącza żadnego pliku do wiadomości.
 
+%package -n claws-mail-plugin-bsfilter
+Summary:	bsfilter plugin for Claws-Mail
+Summary(pl.UTF-8):	Wtyczka bsfilter dla Claws-Mail
+Group:		X11/Applications/Mail
+%requires_eq	claws-mail
+
+%description -n claws-mail-plugin-bsfilter
+Check all messages that are received from an IMAP, LOCAL or POP
+account for spam using Bsfilter.
+
+%description -n claws-mail-plugin-bsfilter -l pl.UTF-8
+Ta wtyczka sprawdza wszystkie wiadomości odebrane przez IMAP, lokalnie
+bądź POP pod kątem występowania spamu przy użyciu bsfilter.
+
 %package -n claws-mail-plugin-cachesaver
 Summary:	cachesaver plugin for Claws-Mail
 Summary(pl.UTF-8):	Wtyczka cachesaver dla Claws-Mail
@@ -125,6 +141,19 @@ period). It helps avoiding the loss of metadata on crashes.
 Ta wtyczka zapisuje cache co 60 sekund (lub w zdefiniowanym przez
 użytkownika okresie). Pomaga uniknąć utraty metadanych podczas awarii
 programu.
+
+%package -n claws-mail-plugin-fancy
+Summary:	fancy plugin for Claws-Mail
+Summary(pl.UTF-8):	Wtyczka fancy dla Claws-Mail
+Group:		X11/Applications/Mail
+%requires_eq	claws-mail
+
+%description -n claws-mail-plugin-fancy
+Renders HTML e-mail using the WebKit library.
+
+%description -n claws-mail-plugin-fancy -l pl.UTF-8
+Ta wtyczka przetwarza wiadomości w formacie HTML przy użyciu
+biblioteki WebKit.
 
 %package -n claws-mail-plugin-fetchinfo
 Summary:	fetchinfo plugin for Claws-Mail
@@ -319,6 +348,8 @@ rm -f $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la,deps}
 %find_lang acpi_notifier
 %find_lang archive
 %find_lang attachwarner
+%find_lang bsfilter_plugin
+%find_lang fancy
 %find_lang gtkhtml2_viewer
 %find_lang notification_plugin
 %find_lang rssyl
@@ -352,10 +383,20 @@ rm -rf $RPM_BUILD_ROOT
 %doc attachwarner-*/{AUTHORS,ChangeLog,README,TODO}
 %attr(755,root,root) %{_plugins_dir}/attachwarner.so
 
+%files -n claws-mail-plugin-bsfilter -f bsfilter_plugin.lang
+%defattr(644,root,root,755)
+%doc bsfilter_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/bsfilter.so
+
 %files -n claws-mail-plugin-cachesaver
 %defattr(644,root,root,755)
 %doc cachesaver-*/{AUTHORS,ChangeLog}
 %attr(755,root,root) %{_plugins_dir}/cachesaver.so
+
+%files -n claws-mail-plugin-fancy -f fancy.lang
+%defattr(644,root,root,755)
+%doc fancy-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/fancy.so
 
 %files -n claws-mail-plugin-fetchinfo
 %defattr(644,root,root,755)
@@ -389,7 +430,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n claws-mail-plugin-rssyl -f rssyl.lang
 %defattr(644,root,root,755)
-%doc rssyl-*/{AUTHORS,ChangeLog,TODO}
+%doc rssyl-*/{AUTHORS,ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/rssyl.so
 
 %files -n claws-mail-plugin-spamreport -f spam_report.lang
