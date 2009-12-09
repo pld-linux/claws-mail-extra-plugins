@@ -10,15 +10,19 @@ Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
 URL:		http://www.claws-mail.net/plugins.php
 BuildRequires:	claws-mail-devel >= 3.7.3
 BuildRequires:	curl-devel
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-webkit-devel
 BuildRequires:	libarchive-devel
+BuildRequires:	libcanberra-gtk-devel
 BuildRequires:	libgtkhtml-devel
 BuildRequires:	libnotify-devel >= 0.4.3
 BuildRequires:	libxml2-devel
 BuildRequires:	libytnef-devel
 BuildRequires:	perl-devel
 BuildRequires:	pkgconfig
+BuildRequires:	python-devel
+BuildRequires:	python-pygtk-devel
 BuildRequires:	synce-librapi2-devel
 BuildRequires:	synce-libsynce-devel
 %requires_eq	claws-mail
