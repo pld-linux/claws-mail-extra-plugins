@@ -1,12 +1,12 @@
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
-Version:	3.7.3
-Release:	4
+Version:	3.7.4
+Release:	1
 License:	GPL v3
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	aa397973a01893c0ce1b96402020ab62
+# Source0-md5:	04bac65d15b2fb19a4535a552a27f612
 URL:		http://www.claws-mail.net/plugins.php
 BuildRequires:	claws-mail-devel >= 3.7.3
 BuildRequires:	curl-devel
@@ -15,6 +15,7 @@ BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-webkit-devel
 BuildRequires:	libarchive-devel
 BuildRequires:	libcanberra-gtk-devel
+BuildRequires:	libchamplain-devel >= 0.4.0
 BuildRequires:	libgtkhtml-devel
 BuildRequires:	libnotify-devel >= 0.4.3
 BuildRequires:	libxml2-devel
@@ -178,6 +179,18 @@ Ta wtyczka wstawia nagłówki zawierające informacje o ściąganiu: UIDL,
 Claws-Mail, nazwę konta, serwer POP, identyfikator użytkownika i czas
 pobrania.
 
+%package -n claws-mail-plugin-geolocation
+Summary:	geolocation plugin for Claws-Mail
+Summary(pl.UTF-8):	Wtyczka geolocation dla Claws-Mail
+Group:		X11/Applications/Mail
+%requires_eq	claws-mail
+
+%description -n claws-mail-plugin-geolocation
+This plugin provides GeoLocation functionality.
+
+%description -n claws-mail-plugin-geolocation -l pl.UTF-8
+Wtyczka dostarcza funkcje geolokacji.
+
 %package -n claws-mail-plugin-gtkhtml2_viewer
 Summary:	gtkhtml2_viewer plugin for Claws-Mail
 Summary(pl.UTF-8):	Wtyczka gtkhtml2_viewer dla Claws-Mail
@@ -230,6 +243,7 @@ Group:		X11/Applications/Mail
 %requires_eq	claws-mail
 Provides:	sylpheed-claws-plugin-notification
 Obsoletes:	sylpheed-claws-plugin-notification
+BuildRequires:	claws-mail >= 3.7.3.22
 
 %description -n claws-mail-plugin-notification
 This plugin provides various ways to notify the user of new and unread
@@ -257,6 +271,18 @@ Ta wtyczka ma na celu rozszerzenie możliwości filtrowania
 Sylpheeda-Claws. Udostępnia perlowy interfejs do mechanizmów
 filtrowania Sylpheeda-Claws, pozwalając na użycie pełnej mocy Perla w
 filtrach wiadomości.
+
+%package -n claws-mail-plugin-python
+Summary:	python plugin for Claws-Mail
+Summary(pl.UTF-8):	Wtyczka python dla Claws-Mail
+Group:		X11/Applications/Mail
+%requires_eq	claws-mail
+
+%description -n claws-mail-plugin-python
+This plugin provides Python integration features.
+
+%description -n claws-mail-plugin-python -l pl.UTF-8
+Wtyczka do pythona.
 
 %package -n claws-mail-plugin-rssyl
 Summary:	RSSyl plugin for Claws-Mail
@@ -355,8 +381,10 @@ rm -f $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la,deps}
 %find_lang attachwarner
 %find_lang bsfilter_plugin
 %find_lang fancy
+%find_lang geolocation_plugin
 %find_lang gtkhtml2_viewer
 %find_lang notification_plugin
+%find_lang python_plugin
 %find_lang rssyl
 %find_lang spam_report
 %find_lang tnef_parse
@@ -408,6 +436,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc fetchinfo-plugin-*/{ChangeLog,README}
 %attr(755,root,root) %{_plugins_dir}/fetchinfo_plugin.so
 
+%files -n claws-mail-plugin-geolocation -f geolocation_plugin.lang
+%defattr(644,root,root,755)
+%doc geolocation_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/geolocation_plugin.so
+
 %files -n claws-mail-plugin-gtkhtml2_viewer -f gtkhtml2_viewer.lang
 %defattr(644,root,root,755)
 %doc gtkhtml2_viewer-*/{AUTHORS,ChangeLog}
@@ -432,6 +465,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc perl_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/perl_plugin.so
+
+%files -n claws-mail-plugin-python -f python_plugin.lang
+%defattr(644,root,root,755)
+%doc python_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/python_plugin.so
 
 %files -n claws-mail-plugin-rssyl -f rssyl.lang
 %defattr(644,root,root,755)
