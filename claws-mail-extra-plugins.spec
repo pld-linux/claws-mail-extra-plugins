@@ -8,7 +8,7 @@ Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
 # Source0-md5:	ff3fe3e242edcb8cb9a98d98285121e3
 URL:		http://www.claws-mail.net/plugins.php
-BuildRequires:	claws-mail-devel >= 3.7.3
+BuildRequires:	claws-mail-devel >= 3.7.3.22
 BuildRequires:	curl-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.0
@@ -243,7 +243,6 @@ Group:		X11/Applications/Mail
 %requires_eq	claws-mail
 Provides:	sylpheed-claws-plugin-notification
 Obsoletes:	sylpheed-claws-plugin-notification
-BuildRequires:	claws-mail >= 3.7.3.22
 
 %description -n claws-mail-plugin-notification
 This plugin provides various ways to notify the user of new and unread
