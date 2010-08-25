@@ -1,0 +1,12 @@
+diff -ur claws-mail-extra-plugins-3.7.6.orig//geolocation_plugin-0.0.3/configure.ac claws-mail-extra-plugins-3.7.6.fix//geolocation_plugin-0.0.3/configure.ac
+--- claws-mail-extra-plugins-3.7.6.orig//geolocation_plugin-0.0.3/configure.ac	2010-05-01 16:18:31.000000000 +0200
++++ claws-mail-extra-plugins-3.7.6.fix//geolocation_plugin-0.0.3/configure.ac	2010-08-25 14:15:43.670198866 +0200
+@@ -97,7 +97,7 @@
+ PKG_CHECK_MODULES(LIBSOUP, libsoup-2.4)
+ 
+ dnl Check for libchamplain
+-PKG_CHECK_MODULES(CHAMPLAIN, champlain-gtk-0.4 >= 0.4.0)
++PKG_CHECK_MODULES(CHAMPLAIN, champlain-gtk-0.6 >= 0.6.0)
+ 
+ AC_SUBST(VERSION)
+ AC_SUBST(PLUGINVERSION)

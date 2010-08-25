@@ -7,6 +7,7 @@ License:	GPL v3
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
 # Source0-md5:	adcedabfed8956f1fdf91b52965f0ef2
+Patch0:		%{name}-build.patch
 URL:		http://www.claws-mail.net/plugins.php
 BuildRequires:	claws-mail-devel >= 3.7.3.22
 BuildRequires:	curl-devel
@@ -357,10 +358,12 @@ webCal.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 for i in `find * -maxdepth 0 -type d -print`; do
 	cd "$i"
+	%{__autoconf}
 	%configure
 	%{__make}
 	cd ..
