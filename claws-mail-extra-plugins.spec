@@ -2,7 +2,7 @@ Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
 Version:	3.7.7
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
@@ -16,7 +16,7 @@ BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-webkit-devel
 BuildRequires:	libarchive-devel
 BuildRequires:	libcanberra-gtk-devel
-BuildRequires:	libchamplain-devel >= 0.4.0
+BuildRequires:	libchamplain-devel >= 0.8.0
 BuildRequires:	libgtkhtml-devel
 BuildRequires:	libnotify-devel >= 0.4.3
 BuildRequires:	libxml2-devel
@@ -25,15 +25,12 @@ BuildRequires:	perl-devel
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel
 BuildRequires:	python-pygtk-devel
-BuildRequires:	synce-librapi2-devel
-BuildRequires:	synce-libsynce-devel
 %requires_eq	claws-mail
 Requires:	claws-mail-plugin-acpi_notifier = %{version}-%{release}
 Requires:	claws-mail-plugin-archive = %{version}-%{release}
 Requires:	claws-mail-plugin-att_remover = %{version}-%{release}
 Requires:	claws-mail-plugin-attachwarner = %{version}-%{release}
 Requires:	claws-mail-plugin-bsfilter = %{version}-%{release}
-Requires:	claws-mail-plugin-cachesaver = %{version}-%{release}
 Requires:	claws-mail-plugin-fancy = %{version}-%{release}
 Requires:	claws-mail-plugin-fetchinfo = %{version}-%{release}
 Requires:	claws-mail-plugin-gtkhtml2_viewer = %{version}-%{release}
@@ -43,7 +40,6 @@ Requires:	claws-mail-plugin-notification = %{version}-%{release}
 Requires:	claws-mail-plugin-perl = %{version}-%{release}
 Requires:	claws-mail-plugin-rssyl = %{version}-%{release}
 Requires:	claws-mail-plugin-spamreport = %{version}-%{release}
-Requires:	claws-mail-plugin-synce = %{version}-%{release}
 Requires:	claws-mail-plugin-tnef_parse = %{version}-%{release}
 Requires:	claws-mail-plugin-vcalendar = %{version}-%{release}
 Provides:	sylpheed-claws-extra-plugins
@@ -131,23 +127,6 @@ account for spam using Bsfilter.
 %description -n claws-mail-plugin-bsfilter -l pl.UTF-8
 Ta wtyczka sprawdza wszystkie wiadomości odebrane przez IMAP, lokalnie
 bądź POP pod kątem występowania spamu przy użyciu bsfilter.
-
-%package -n claws-mail-plugin-cachesaver
-Summary:	cachesaver plugin for Claws-Mail
-Summary(pl.UTF-8):	Wtyczka cachesaver dla Claws-Mail
-Group:		X11/Applications/Mail
-%requires_eq	claws-mail
-Provides:	sylpheed-claws-plugin-cachesaver
-Obsoletes:	sylpheed-claws-plugin-cachesaver
-
-%description -n claws-mail-plugin-cachesaver
-This plugin saves the caches every 60 seconds (or user-defined
-period). It helps avoiding the loss of metadata on crashes.
-
-%description -n claws-mail-plugin-cachesaver -l pl.UTF-8
-Ta wtyczka zapisuje cache co 60 sekund (lub w zdefiniowanym przez
-użytkownika okresie). Pomaga uniknąć utraty metadanych podczas awarii
-programu.
 
 %package -n claws-mail-plugin-fancy
 Summary:	fancy plugin for Claws-Mail
@@ -310,23 +289,6 @@ Group:		X11/Applications/Mail
 This plugin allows you to upload spams to various spam reporting
 places, like http://www.signal-spam.fr/ .
 
-%package -n claws-mail-plugin-synce
-Summary:	SynCE plugin for Claws-Mail
-Summary(pl.UTF-8):	Wtyczka SynCE dla Claws-Mail
-Group:		X11/Applications/Mail
-%requires_eq	claws-mail
-Provides:	sylpheed-claws-plugin-synce
-Obsoletes:	sylpheed-claws-plugin-synce
-
-%description -n claws-mail-plugin-synce
-This plugin assists in keeping the addressbook of a Windows CE device
-in sync with Claws-Mail addressbook, with respect to email addresses.
-
-%description -n claws-mail-plugin-synce -l pl.UTF-8
-Ta wtyczka pomaga w utrzymywaniu książki adresowej urządzeń z Windows
-CE w synchronizacji z książką adresową Sylpheeda-Claws, uwzględniając
-adresy pocztowe.
-
 %package -n claws-mail-plugin-tnef_parse
 Summary:	TNEF Parse plugin for Claws-Mail
 Summary(pl.UTF-8):	Wtyczka TNEF Parse dla Claws-Mail
@@ -423,11 +385,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc bsfilter_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/bsfilter.so
 
-%files -n claws-mail-plugin-cachesaver
-%defattr(644,root,root,755)
-%doc cachesaver-*/{AUTHORS,ChangeLog}
-%attr(755,root,root) %{_plugins_dir}/cachesaver.so
-
 %files -n claws-mail-plugin-fancy -f fancy.lang
 %defattr(644,root,root,755)
 %doc fancy-*/{AUTHORS,ChangeLog,NEWS,README}
@@ -482,11 +439,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc spam_report-*/{ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/spamreport.so
-
-%files -n claws-mail-plugin-synce
-%defattr(644,root,root,755)
-%doc synce_plugin-*/{AUTHORS,ChangeLog,README}
-%attr(755,root,root) %{_plugins_dir}/synce_plugin.so
 
 %files -n claws-mail-plugin-tnef_parse -f tnef_parse.lang
 %defattr(644,root,root,755)
