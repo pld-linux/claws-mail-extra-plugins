@@ -2,7 +2,7 @@ Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
 Version:	3.7.7
-Release:	2
+Release:	3
 License:	GPL v3
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
@@ -27,10 +27,12 @@ BuildRequires:	python-devel
 BuildRequires:	python-pygtk-devel
 %requires_eq	claws-mail
 Requires:	claws-mail-plugin-acpi_notifier = %{version}-%{release}
+Requires:	claws-mail-plugin-address_keeper = %{version}-%{release}
 Requires:	claws-mail-plugin-archive = %{version}-%{release}
 Requires:	claws-mail-plugin-att_remover = %{version}-%{release}
 Requires:	claws-mail-plugin-attachwarner = %{version}-%{release}
 Requires:	claws-mail-plugin-bsfilter = %{version}-%{release}
+Requires:	claws-mail-plugin-clamd = %{version}-%{release}
 Requires:	claws-mail-plugin-fancy = %{version}-%{release}
 Requires:	claws-mail-plugin-fetchinfo = %{version}-%{release}
 Requires:	claws-mail-plugin-gtkhtml2_viewer = %{version}-%{release}
@@ -44,6 +46,8 @@ Requires:	claws-mail-plugin-tnef_parse = %{version}-%{release}
 Requires:	claws-mail-plugin-vcalendar = %{version}-%{release}
 Provides:	sylpheed-claws-extra-plugins
 Obsoletes:	claws-mail-plugin-pdf_viewer
+Obsoletes:	claws-mail-plugin-cachesaver <= 3.7.6-5
+Obsoletes:	claws-mail-plugin-synce <= 3.7.6-5
 Obsoletes:	sylpheed-claws-extra-plugins
 Obsoletes:	sylpheed-claws-plugin-others
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -70,6 +74,20 @@ This plugin enables mail notification via LEDs on some laptops.
 %description -n claws-mail-plugin-acpi_notifier -l pl.UTF-8
 Ta wtyczka umożliwia w niektórych laptopach powiadamianie o nowej
 poczcie poprzez diody LED.
+
+%package -n claws-mail-plugin-address_keeper
+Summary:	address_keeper plugin for Claws-Mail
+Summary(pl.UTF-8):	Wtyczka address_keeper dla Claws-Mail
+Group:		X11/Applications/Mail
+%requires_eq	claws-mail
+Provides:	sylpheed-claws-plugin-address_keeper
+Obsoletes:	sylpheed-claws-plugin-address_keeper
+
+%description -n claws-mail-plugin-address_keeper
+Keeps all recipient addresses in an addressbook folder.
+
+%description -n claws-mail-plugin-address_keeper -l pl.UTF-8
+Trzyma wszystkie adresy w dedykowanym folderze.
 
 %package -n claws-mail-plugin-archive
 Summary:	archive plugin for Claws-Mail
@@ -113,6 +131,21 @@ message.
 %description -n claws-mail-plugin-attachwarner -l pl.UTF-8
 Ta wtyczka ostrzega, kiedy użytkownik piszący wiadomość wspomina w
 treści o załączniku, ale nie załącza żadnego pliku do wiadomości.
+
+%package -n claws-mail-plugin-clamd
+Summary:	clamd plugin for Claws-Mail
+Summary(pl.UTF-8):	Wtyczka clamd dla Claws-Mail
+Group:		X11/Applications/Mail
+%requires_eq	claws-mail
+Requires:	clamav
+
+%description -n claws-mail-plugin-clamd
+Scan all messages that are received from an IMAP, LOCAL or POP account
+using clamd (Clam AV).
+
+%description -n claws-mail-plugin-clamd -l pl.UTF-8
+Sprawdza wszystkie wiadomości odebrane poprzez IMAP, LOCAL lub POP
+przy użyciu clamd (Clam AV).
 
 %package -n claws-mail-plugin-bsfilter
 Summary:	bsfilter plugin for Claws-Mail
@@ -341,9 +374,11 @@ rm -rf $RPM_BUILD_ROOT%{_includedir}
 rm -f $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la,deps}
 
 %find_lang acpi_notifier
+%find_lang address_keeper
 %find_lang archive
 %find_lang attachwarner
 %find_lang bsfilter_plugin
+%find_lang clamd
 %find_lang fancy
 %find_lang geolocation_plugin
 %find_lang gtkhtml2_viewer
@@ -359,11 +394,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc RELEASE_NOTES
 
 %files -n claws-mail-plugin-acpi_notifier -f acpi_notifier.lang
 %defattr(644,root,root,755)
 %doc acpi_notifier-*/{AUTHORS,ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/acpi_notifier.so
+
+%files -n claws-mail-plugin-address_keeper -f address_keeper.lang
+%defattr(644,root,root,755)
+%doc address_keeper-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/address_keeper.so
 
 %files -n claws-mail-plugin-archive -f archive.lang
 %defattr(644,root,root,755)
@@ -384,6 +425,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc bsfilter_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/bsfilter.so
+
+%files -n claws-mail-plugin-clamd -f clamd.lang
+%defattr(644,root,root,755)
+%doc clamd-*/{AUTHORS,ChangeLog,NEWS,README}
+%attr(755,root,root) %{_plugins_dir}/clamd.so
 
 %files -n claws-mail-plugin-fancy -f fancy.lang
 %defattr(644,root,root,755)
