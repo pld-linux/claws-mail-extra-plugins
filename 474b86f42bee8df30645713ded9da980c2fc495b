@@ -1,0 +1,6 @@
+- rel. 2
+- BR: libchamplain-devel >= 0.8.0 updated
+- dropped two plugins: cachesaver and synce (no longer available), BR
+  adjusted accordingly. Reason: those plugins have been unmaintained.
+  See RELEASE_NOTES for details
+- patch updated by hawk
