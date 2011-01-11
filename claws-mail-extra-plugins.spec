@@ -1,12 +1,12 @@
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
-Version:	3.7.7
-Release:	3
+Version:	3.7.8
+Release:	1
 License:	GPL v3
 Group:		Applications
 Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	9200145a0a8a41eac9a0b50ec48797dc
+# Source0-md5:	8a67a00598262f8ca07a4af5cd43361d
 Patch0:		%{name}-build.patch
 URL:		http://www.claws-mail.org/plugins.php
 BuildRequires:	claws-mail-devel >= 3.7.3.22
