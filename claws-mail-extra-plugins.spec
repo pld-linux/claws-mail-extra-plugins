@@ -5,11 +5,12 @@ Version:	3.7.8
 Release:	2
 License:	GPL v3+
 Group:		Applications
-Source0:	http://dl.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
 # Source0-md5:	8a67a00598262f8ca07a4af5cd43361d
 Patch0:		%{name}-build.patch
 URL:		http://www.claws-mail.org/plugins.php
 BuildRequires:	claws-mail-devel >= 3.7.3.22
+BuildRequires:	clutter-gtk-devel >= 0.10.0
 BuildRequires:	curl-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.0
@@ -45,8 +46,8 @@ Requires:	claws-mail-plugin-spamreport = %{version}-%{release}
 Requires:	claws-mail-plugin-tnef_parse = %{version}-%{release}
 Requires:	claws-mail-plugin-vcalendar = %{version}-%{release}
 Provides:	sylpheed-claws-extra-plugins
-Obsoletes:	claws-mail-plugin-pdf_viewer
 Obsoletes:	claws-mail-plugin-cachesaver <= 3.7.6-5
+Obsoletes:	claws-mail-plugin-pdf_viewer
 Obsoletes:	claws-mail-plugin-synce <= 3.7.6-5
 Obsoletes:	sylpheed-claws-extra-plugins
 Obsoletes:	sylpheed-claws-plugin-others
