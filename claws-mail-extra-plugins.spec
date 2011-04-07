@@ -1,8 +1,11 @@
+#
+# TODO: make compatibility for clutter-gtk 1.0
+#
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
 Version:	3.7.8
-Release:	2
+Release:	0.1
 License:	GPL v3+
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
