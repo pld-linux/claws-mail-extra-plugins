@@ -1,7 +1,7 @@
-diff -ur claws-mail-extra-plugins-3.7.7.orig//geolocation_plugin-0.0.4/configure.ac claws-mail-extra-plugins-3.7.7/geolocation_plugin-0.0.4/configure.ac
---- claws-mail-extra-plugins-3.7.7.orig//geolocation_plugin-0.0.4/configure.ac	2010-11-24 11:39:12.000000000 +0100
-+++ claws-mail-extra-plugins-3.7.7/geolocation_plugin-0.0.4/configure.ac	2010-11-24 11:39:50.328687496 +0100
-@@ -97,7 +97,7 @@
+diff -burNp claws-mail-extra-plugins-3.7.9/geolocation_plugin-0.0.5/configure.ac claws-mail-extra-plugins-3.7.9-dud/geolocation_plugin-0.0.5/configure.ac
+--- claws-mail-extra-plugins-3.7.9/geolocation_plugin-0.0.5/configure.ac	2011-04-09 11:42:48.000000000 +0200
++++ claws-mail-extra-plugins-3.7.9-dud/geolocation_plugin-0.0.5/configure.ac	2011-04-13 10:51:43.169188346 +0200
+@@ -97,7 +97,7 @@ dnl Check for libsoup
  PKG_CHECK_MODULES(LIBSOUP, libsoup-2.4)
  
  dnl Check for libchamplain and clutter
