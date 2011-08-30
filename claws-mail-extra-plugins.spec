@@ -43,6 +43,7 @@ Requires:	claws-mail-plugin-bsfilter = %{version}-%{release}
 Requires:	claws-mail-plugin-clamd = %{version}-%{release}
 Requires:	claws-mail-plugin-fancy = %{version}-%{release}
 Requires:	claws-mail-plugin-fetchinfo = %{version}-%{release}
+Requires:	claws-mail-plugin-gdata = %{version}-%{release}
 Requires:	claws-mail-plugin-gtkhtml2_viewer = %{version}-%{release}
 Requires:	claws-mail-plugin-mailmbox = %{version}-%{release}
 Requires:	claws-mail-plugin-newmail = %{version}-%{release}
@@ -199,6 +200,18 @@ time.
 Ta wtyczka wstawia nagłówki zawierające informacje o ściąganiu: UIDL,
 Claws-Mail, nazwę konta, serwer POP, identyfikator użytkownika i czas
 pobrania.
+
+%package -n claws-mail-plugin-gdata
+Summary:	gdata plugin for Claws-Mail
+Summary(pl.UTF-8):	Wtyczka gdata dla Claws-Mail
+Group:		X11/Applications/Mail
+%requires_eq    claws-mail
+
+%description -n claws-mail-plugin-gdata
+gdata plugin for Claws-Mail.
+
+%description -n claws-mail-plugin-gdata -l pl.UTF-8
+Wtyczka gdata dla Claws-Mail.
 
 %package -n claws-mail-plugin-geolocation
 Summary:	geolocation plugin for Claws-Mail
@@ -447,6 +460,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc fetchinfo-plugin-*/{ChangeLog,README}
 %attr(755,root,root) %{_plugins_dir}/fetchinfo_plugin.so
+
+%files -n claws-mail-plugin-gdata
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_plugins_dir}/gdata_plugin.so
 
 %files -n claws-mail-plugin-geolocation -f geolocation_plugin.lang
 %defattr(644,root,root,755)
