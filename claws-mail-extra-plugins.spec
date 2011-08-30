@@ -2,20 +2,19 @@
 # TODO: make compatibility for clutter-gtk 1.0 (Th only)
 #
 %if "%{pld_release}" != "th"
-%define		_rel	2
+%define		_rel	1
 %else
 %define		_rel	0.1
 %endif
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
-Version:	3.7.9
+Version:	3.7.10
 Release:	%{_rel}
 License:	GPL v3+
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	3d1ebc48f686ab10702380c776b5d5d0
-Patch0:		%{name}-build.patch
+# Source0-md5:	fe782b2d4762c9727e22c1bb7979f7d6
 URL:		http://www.claws-mail.org/plugins.php
 BuildRequires:	claws-mail-devel >= 3.7.8.31
 BuildRequires:	clutter-gtk-devel >= 0.10.0
@@ -362,7 +361,6 @@ webCal.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 for i in `find * -maxdepth 0 -type d -print`; do
@@ -379,8 +377,8 @@ for i in `find * -maxdepth 0 -type d -print`; do
 	%{__make} -C "$i" install \
 		DESTDIR=$RPM_BUILD_ROOT
 done
-rm -rf $RPM_BUILD_ROOT%{_includedir}
-rm -f $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la,deps}
+%{__rm} -r $RPM_BUILD_ROOT%{_includedir}
+%{__rm} $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la,deps}
 
 %find_lang acpi_notifier
 %find_lang address_keeper
