@@ -378,7 +378,7 @@ for i in `find * -maxdepth 0 -type d -print`; do
 		DESTDIR=$RPM_BUILD_ROOT
 done
 %{__rm} -r $RPM_BUILD_ROOT%{_includedir}
-%{__rm} $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la,deps}
+%{__rm} $RPM_BUILD_ROOT%{_plugins_dir}/*.{a,la}
 
 %find_lang acpi_notifier
 %find_lang address_keeper
