@@ -25,6 +25,7 @@ BuildRequires:	gtk-webkit-devel
 BuildRequires:	libarchive-devel
 BuildRequires:	libcanberra-gtk-devel
 BuildRequires:	libchamplain-devel >= 0.8.0
+BuildRequires:	libgdata-devel >= 0.6.4
 BuildRequires:	libgtkhtml-devel
 BuildRequires:	libnotify-devel >= 0.4.3
 BuildRequires:	libxml2-devel
