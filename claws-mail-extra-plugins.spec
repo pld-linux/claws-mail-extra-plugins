@@ -15,8 +15,9 @@ License:	GPL v3+
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
 # Source0-md5:	4776f6e0357a694f384349ac73b6da52
+Patch0:		%{name}-geolocation.patch
 URL:		http://www.claws-mail.org/plugins.php
-BuildRequires:	claws-mail-devel >= 3.7.8.31
+BuildRequires:	claws-mail-devel >= 3.7.10.41
 BuildRequires:	clutter-gtk-devel >= 0.10.0
 BuildRequires:	curl-devel
 BuildRequires:	gettext-devel
@@ -375,6 +376,7 @@ webCal.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 for i in `find * -maxdepth 0 -type d -print`; do
