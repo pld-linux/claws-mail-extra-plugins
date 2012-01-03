@@ -2,7 +2,7 @@
 # TODO: make compatibility for clutter-gtk 1.0 (Th only)
 #
 %if "%{pld_release}" != "th"
-%define		_rel	1
+%define		_rel	2
 %else
 %define		_rel	0.1
 %endif
@@ -377,6 +377,13 @@ webCal.
 %prep
 %setup -q
 %patch0 -p1
+
+# id_ID -> id locale hacks
+for i in `find -name id_ID.po -print`; do
+	i=`echo $i | sed 's,/po/id_ID.po,,'`
+	mv -f $i/po/{id_ID,id}.po
+	%{__sed} -i -e 's,id_ID,id,g' $i/configure.ac
+done
 
 %build
 for i in `find * -maxdepth 0 -type d -print`; do
