@@ -2,7 +2,7 @@
 # TODO: make compatibility for clutter-gtk 1.0 (Th only)
 #
 %if "%{pld_release}" != "th"
-%define		_rel	2
+%define		_rel	3
 %else
 %define		_rel	0.1
 %endif
