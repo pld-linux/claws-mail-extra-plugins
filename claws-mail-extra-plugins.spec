@@ -1,31 +1,29 @@
 #
-# TODO: make compatibility for clutter-gtk 1.0 (Th only)
+%bcond_with	geolocation
 #
-%if "%{pld_release}" != "th"
-%define		_rel	3
-%else
-%define		_rel	0.1
-%endif
+%define		_rel	1
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
-Version:	3.8.0
+Version:	3.9.0
 Release:	%{_rel}
 License:	GPL v3+
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/sylpheed-claws/%{name}-%{version}.tar.bz2
-# Source0-md5:	4776f6e0357a694f384349ac73b6da52
+# Source0-md5:	e82431243a6643bcc5520df78908240c
 Patch0:		%{name}-geolocation.patch
 URL:		http://www.claws-mail.org/plugins.php
-BuildRequires:	claws-mail-devel >= 3.7.10.41
+%if %{with geolocation}
 BuildRequires:	clutter-gtk-devel >= 0.10.0
+BuildRequires:	libchamplain-devel >= 0.8.0
+%endif
+BuildRequires:	claws-mail-devel >= 3.7.10.41
 BuildRequires:	curl-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-webkit-devel
 BuildRequires:	libarchive-devel
 BuildRequires:	libcanberra-gtk-devel
-BuildRequires:	libchamplain-devel >= 0.8.0
 BuildRequires:	libgdata-devel >= 0.6.4
 BuildRequires:	libgtkhtml-devel
 BuildRequires:	libnotify-devel >= 0.4.3
@@ -385,6 +383,10 @@ for i in `find -name id_ID.po -print`; do
 	%{__sed} -i -e 's,id_ID,id,g' $i/configure.ac
 done
 
+%if ! %{with geolocation}
+rm -r geolocation*
+%endif
+
 %build
 for i in `find * -maxdepth 0 -type d -print`; do
 	cd "$i"
@@ -410,7 +412,9 @@ done
 %find_lang bsfilter_plugin
 %find_lang clamd
 %find_lang fancy
+%if %{with geolocation}
 %find_lang geolocation_plugin
+%endif
 %find_lang gtkhtml2_viewer
 %find_lang notification_plugin
 %find_lang python_plugin
@@ -475,10 +479,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_plugins_dir}/gdata_plugin.so
 
+%if %{with geolocation}
 %files -n claws-mail-plugin-geolocation -f geolocation_plugin.lang
 %defattr(644,root,root,755)
 %doc geolocation_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/geolocation_plugin.so
+%endif
 
 %files -n claws-mail-plugin-gtkhtml2_viewer -f gtkhtml2_viewer.lang
 %defattr(644,root,root,755)
