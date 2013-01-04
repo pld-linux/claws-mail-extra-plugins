@@ -31,6 +31,7 @@ BuildRequires:	libxml2-devel
 BuildRequires:	libytnef-devel
 BuildRequires:	perl-devel
 BuildRequires:	pkgconfig
+BuildRequires:	poppler-glib-devel
 BuildRequires:	python-devel
 BuildRequires:	python-pygtk-devel
 %requires_eq	claws-mail
