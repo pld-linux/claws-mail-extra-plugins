@@ -1,7 +1,7 @@
 #
 %bcond_with	geolocation
 #
-%define		_rel	1
+%define		_rel	2
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
@@ -56,7 +56,6 @@ Requires:	claws-mail-plugin-tnef_parse = %{version}-%{release}
 Requires:	claws-mail-plugin-vcalendar = %{version}-%{release}
 Provides:	sylpheed-claws-extra-plugins
 Obsoletes:	claws-mail-plugin-cachesaver <= 3.7.6-5
-Obsoletes:	claws-mail-plugin-pdf_viewer
 Obsoletes:	claws-mail-plugin-synce <= 3.7.6-5
 Obsoletes:	sylpheed-claws-extra-plugins
 Obsoletes:	sylpheed-claws-plugin-others
@@ -306,6 +305,20 @@ Sylpheeda-Claws. Udostępnia perlowy interfejs do mechanizmów
 filtrowania Sylpheeda-Claws, pozwalając na użycie pełnej mocy Perla w
 filtrach wiadomości.
 
+%package -n claws-mail-plugin-pdf_viewer
+Summary:       pdf_viewer plugin for Claws-Mail
+Summary(pl.UTF-8):     Wtyczka pdf_viewer dla Claws-Mail
+Group:         X11/Applications/Networking
+%requires_eq   claws-mail
+Requires:      ghostscript
+
+%description -n claws-mail-plugin-pdf_viewer
+This plugin enables the viewing of PDF and PostScript attachments.
+
+%description -n claws-mail-plugin-pdf_viewer -l pl.UTF-8
+Ta wtyczka umożliwia wyświetlanie załączników w formacie PDF i
+PostScript.
+
 %package -n claws-mail-plugin-python
 Summary:	python plugin for Claws-Mail
 Summary(pl.UTF-8):	Wtyczka python dla Claws-Mail
@@ -418,6 +431,7 @@ done
 %endif
 %find_lang gtkhtml2_viewer
 %find_lang notification_plugin
+%find_lang pdf_viewer
 %find_lang python_plugin
 %find_lang rssyl
 %find_lang spam_report
@@ -511,6 +525,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc perl_plugin-*/{AUTHORS,ChangeLog,NEWS,README}
 %attr(755,root,root) %{_plugins_dir}/perl_plugin.so
+
+%files -n claws-mail-plugin-pdf_viewer -f pdf_viewer.lang
+%defattr(644,root,root,755)
+%doc pdf_viewer-*/{AUTHORS,ChangeLog,README}
+%attr(755,root,root) %{_plugins_dir}/pdf_viewer.so
 
 %files -n claws-mail-plugin-python -f python_plugin.lang
 %defattr(644,root,root,755)
