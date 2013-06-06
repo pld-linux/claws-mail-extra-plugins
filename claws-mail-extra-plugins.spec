@@ -1,7 +1,7 @@
 #
 %bcond_with	geolocation
 #
-%define		_rel	2
+%define		_rel	3
 Summary:	Plugins for Claws-Mail (metapackage)
 Summary(pl.UTF-8):	Wtyczki dla Claws-Mail (metapakiet)
 Name:		claws-mail-extra-plugins
