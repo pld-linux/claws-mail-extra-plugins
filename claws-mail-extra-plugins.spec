@@ -19,7 +19,7 @@ BuildRequires:	libchamplain-devel >= 0.8.0
 %endif
 BuildRequires:	claws-mail-devel >= 3.7.10.41
 BuildRequires:	curl-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-webkit-devel
 BuildRequires:	libarchive-devel
