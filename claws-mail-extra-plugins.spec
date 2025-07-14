@@ -388,7 +388,7 @@ webCal.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 # id_ID -> id locale hacks
 for i in `find -name id_ID.po -print`; do
